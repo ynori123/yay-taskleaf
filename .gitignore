@@ -33,3 +33,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore cache of PostgreSQL.
+/db/postgresql/pg_stat_tmp
