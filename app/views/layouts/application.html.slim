@@ -16,11 +16,13 @@ html
           li.nav-item= link_to "タスク一覧", tasks_path, class: "nav-link"
           - if current_user.admin?
             li.nav-item= link_to 'ユーザー一覧', admin_users_path, class: "nav-link"
-          li.nav-item= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link"
+          li.nav-item= link_to "ログアウト", logout_path, data: { turbo_method: :delete }, class: "nav-link"
         - else 
           li.navbar-item
             = link_to "ログイン", login_path, class: "nav-link"
     .container
       - if flash.notice.present?
         .alert.alert-success= flash.notice
+      - if flash.alert.present?
+        .alert.alert-danger= flash.alert
       = yield
