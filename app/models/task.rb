@@ -6,6 +6,8 @@ class Task < ApplicationRecord
 
   belongs_to :user, foreign_key: "user_id"
 
+  scope :recent, -> { order(created_at: :desc) }
+
   private
     def validate_name_not_including_comma
       errors.add(:name, 'にカンマを含めることはできません') if name&.include?(',')
