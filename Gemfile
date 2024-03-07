@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'slim-rails'
 gem 'html2slim-ruby3'
 
+gem 'rails_autolink'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 
