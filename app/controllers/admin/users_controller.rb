@@ -16,6 +16,16 @@ class Admin::UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    @user = user.find(params[:id])
+
+    if @user.update(user_params)
+      redirect_to admin_users_url(@user), notice: "ユーザー「#{@user.name}」を更新しました"
+    else
+      render :edit
+    end
+  end
+
   def show
     @user = User.find(params[:id])
   end
