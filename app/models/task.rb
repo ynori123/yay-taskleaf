@@ -4,6 +4,8 @@ class Task < ApplicationRecord
   validate :validate_name_not_including_comma
   before_validation :set_nameless_name
 
+  belongs_to :user, foreign_key: "user_id"
+
   private
     def validate_name_not_including_comma
       errors.add(:name, 'にカンマを含めることはできません') if name&.include?(',')
