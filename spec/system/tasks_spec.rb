@@ -13,8 +13,8 @@ describe 'タスク管理機能', type: :system do
       before do
         # ユーザーAでログインする
         visit login_path
-        fill_in 'メールアドレス', with: 'a@example.com'
-        fill_in 'パスワード', with: 'password'
+        fill_in 'session[email]', with: 'a@example.com'
+        fill_in 'session[password]', with: 'password'
         click_button 'ログインする'
       end
       it 'ユーザーAが作成したタスクが表示される' do
