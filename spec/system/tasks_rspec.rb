@@ -10,11 +10,16 @@ describe 'タスク管理機能', type: :system do
     end
 
     context 'ユーザーAがログインしている時' do
-      # ユーザーAでログインする
-    end
-
-    it 'ユーザーAが作成したタスクが表示される' do
-      # 作成済みのタスクの名称が画面上に表示されていることを確認
+      before do
+        # ユーザーAでログインする
+        visit login_path
+        fill_in 'メールアドレス', with: 'a@example.com'
+        fill_in 'パスワード', with: 'password'
+        click_button 'ログインする'
+      end
+      it 'ユーザーAが作成したタスクが表示される' do
+        # 作成済みのタスクの名称が画面上に表示されていることを確認
+      end
     end
   end
 end
