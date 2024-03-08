@@ -7,6 +7,7 @@ gem 'bootstrap', '~> 5.3.0'
 gem 'jquery-rails'
 gem 'slim-rails'
 gem 'html2slim-ruby3'
+gem 'ransack'
 
 gem 'rails_autolink'
 
