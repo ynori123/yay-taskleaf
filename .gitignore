@@ -35,4 +35,4 @@
 /config/master.key
 
 # Ignore cache of PostgreSQL.
-/db/postgresql/pg_stat_tmp
+/db/postgresql/*
