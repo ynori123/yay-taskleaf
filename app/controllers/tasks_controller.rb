@@ -39,8 +39,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task.destroy
-    redirect_to tasks_url, notice: "タスク「 #{task.name} 」を削除しました。"
+    @task.destroy
+    redirect_to tasks_url, notice: "タスク「 #{@task.name} 」を削除しました。"
   end
 
   def confirm_new
