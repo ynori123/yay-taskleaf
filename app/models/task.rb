@@ -14,7 +14,7 @@ class Task < ApplicationRecord
   end
 
   def self.generate_csv
-    CSV.generate_csv(headers: true) do |csv|
+    CSV.generate(headers: true) do |csv|
       csv << csv_attributes
       all.each do |task|
         csv << csv_attributes.map{ |attr| task.send(attr) }
