@@ -31,3 +31,8 @@ table.table.table-hover
           = link_to '削除', task,  data: { turbo_confirm: "タスク「#{task.name}」を削除します。よろしいですか？" ,  turbo_method: :delete }, class: 'btn btn-danger mx-1'
 
 = link_to 'エクスポート', tasks_path(format: :csv), class: 'btn btn-primary mb-3'
+
+= form_tag import_tasks_path, multipart: true, class: 'mb-3' do 
+  .form-group 
+    = file_field_tag :file, class: 'form-control'
+  = submit_tag 'インポート', class: 'btn btn-primary mt-3'

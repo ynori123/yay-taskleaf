@@ -22,6 +22,14 @@ class Task < ApplicationRecord
     end
   end
 
+  def self.import(file)
+    CSV.foreach(file.path, headers: :true) do |row|
+      task = new
+      task.attributes = row.to_hash.slice(*csv_attributes)
+      task.save!
+    end
+  end
+
   def self.ransackable_attributes(auth_object = nil)
     %w[created_at name] # 検索可能にしたい属性をここに追加します
   end
