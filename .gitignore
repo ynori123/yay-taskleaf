@@ -36,3 +36,6 @@
 
 # Ignore cache of PostgreSQL.
 /db/postgresql/*
+
+# Ignore automatical generated files by redis.
+/data
