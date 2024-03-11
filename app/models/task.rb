@@ -9,6 +9,19 @@ class Task < ApplicationRecord
 
   scope :recent, -> { order(created_at: :desc) }
 
+  def self.csv_attributes
+    ["name", "description", "created_at", "updated_at"]
+  end
+
+  def self.generate_csv
+    CSV.generate_csv(headers: true) do |csv|
+      csv << csv_attributes
+      all.each do |task|
+        csv << csv_attributes.map{ |attr| task.send(attr) }
+      end
+    end
+  end
+
   def self.ransackable_attributes(auth_object = nil)
     %w[created_at name] # 検索可能にしたい属性をここに追加します
   end
