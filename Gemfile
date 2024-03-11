@@ -9,6 +9,7 @@ gem 'slim-rails'
 gem 'html2slim-ruby3'
 gem 'ransack'
 gem 'kaminari'
+gem 'sidekiq'
 
 gem 'rails_autolink'
 
