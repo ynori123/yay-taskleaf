@@ -5,6 +5,8 @@ class Task < ApplicationRecord
   validate :validate_name_not_including_comma
   before_validation :set_nameless_name
 
+  paginates_per 50
+
   belongs_to :user, foreign_key: "user_id"
 
   scope :recent, -> { order(created_at: :desc) }
