@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'slim-rails'
 gem 'html2slim-ruby3'
 gem 'ransack'
+gem 'kaminari'
 
 gem 'rails_autolink'
 
